@@ -1,0 +1,82 @@
+{{extend '../common/layout.art'}}
+
+  {{block 'main'}}
+     {{include '../common/header.art'}}
+
+    <div class="row bg-light mw-100 w-100 m-0" style="height: 100%">
+     {{include '../common/aside.art'}}
+      <div class="col-sm-9 pt-4 px-4">
+        <!-- title -->
+        <div class="d-flex justify-content-between mb-3">
+          <h3>
+            Articles List <span class="badge badge-secondary">New</span>
+          </h3>
+          <a class="btn btn-primary" href="#" role="button">Add New Article</a>
+        </div>
+        <!-- table -->
+        <table
+          class="table table-bordered table-striped table-hover text-center"
+        >
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Time</th>
+              <th scope="col">Author</th>
+              <th scope="col">Option</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">001</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm">O</button>
+                <button type="button" class="btn btn-danger btn-sm">X</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">001</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm">O</button>
+                <button type="button" class="btn btn-danger btn-sm">X</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">001</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm">O</button>
+                <button type="button" class="btn btn-danger btn-sm">X</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- pages -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  {{/block}}

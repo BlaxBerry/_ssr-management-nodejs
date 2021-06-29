@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <style>
+      #login-bgk::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: url(../images/login.jpg) center no-repeat;
+        background-size: cover;
+      }
+      #login-card {
+        background-color: rgba(250, 250, 250, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="d-flex flex-column justify-content-center align-items-center vh-100"
+      id="login-bgk"
+    >
+      <div class="h1 display-4 pb-3 text-white"><small>Blog</small> Management</div>
+      <div class="border px-4 py-4 rounded shadow" id="login-card">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="form-group form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Check me out</label
+            >
+          </div>
+          <button type="submit" class="btn btn-block btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

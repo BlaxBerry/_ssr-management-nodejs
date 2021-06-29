@@ -1,0 +1,7 @@
+<div
+  class="row bg-light mw-100 w-100 m-0 border-bottom"
+  style="height: 70px; line-height: 70px"
+>
+  <div class="col-sm-3 text-center text-white bg-primary">Management</div>
+  <div class="col-sm-9 text-right pr-4">Admin</div>
+</div>

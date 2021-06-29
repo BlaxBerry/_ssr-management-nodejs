@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{{extend '../common/layout.art'}}
+
+  {{block 'main'}}
+    {{include '../common/header.art'}}
+
+    <div class="row bg-light mw-100 w-100 m-0" style="height: 100%">
+      {{include '../common/aside.art'}}
+      <div class="col-sm-9 pt-4 px-4">
+        <!-- title -->
+        <div class="mb-3">
+          <h3>
+            Add User <span class="badge badge-secondary">New</span>
+          </h3>
+          <div class="alert alert-warning" role="alert">
+            A simple warning alert—check it out!
+          </div>
+        </div>
+        <!-- form -->
+        <form class="mx-auto border px-4 py-4">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Article Title</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Article Content</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Article Content</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </form>
+      </div>
+    </div>
+  {{/block}}
