@@ -1,8 +1,11 @@
 ## Blog and Users Management
+**SSR**(Server Side Rendering) Blogs and Users' Infomation Management 
 
 ### Directory
 ```js
 |- model  // set database
+    |-connect.js // connect to Mongodb
+    |- user.js
 |- public  // static resource
     |- images
     |- upload
@@ -38,8 +41,22 @@
 - art-template(express-art-template)
 
 ---
+**SSR Server running at localhost:80**
+
 localhost/admin/login
 ![](./public/images/01.png)
+```js
+// created the first user(init Super User)
+// User.create({
+//     username: 'Andy',
+//     email: 'andy@qq.com',
+//     password: '123456',
+//     identity: 'admin',
+//     status: 0
+// })
+//     .then(() => { console.log('new user is created') })
+//     .catch(() => { console.log('falied to create a new user')})
+```
 
 ---
 localhost/admin/users
