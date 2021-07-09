@@ -5,6 +5,6 @@ function serializeArrayToJSON(form) {
     form.serializeArray().forEach((item) => {
         res[item.name] = item.value;
     });
-    console.log(res);
+    // console.log(res);
     return res;
 }

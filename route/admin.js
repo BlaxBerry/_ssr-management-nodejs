@@ -1,7 +1,23 @@
+const e = require('express')
 const express = require('express')
 
 const admin = express.Router()
 
+
+// login
+admin.post('/login', (req, res) => {
+    // get client form vale
+    const { email, password } = req.body
+
+    // server side form value validation
+    if (email.trim().length == 0 || password.trim().length == 0) {
+        return res.status(400).render('admin/error', {
+            status: 400,
+            msg: 'Email Address or Password is WRONG,  will back to login page in 2s'
+        });
+    }
+
+})
 // login page
 admin.get('/login', (req, res) => {
     res.render('admin/login')

@@ -38,7 +38,7 @@
         <small>Blog</small> Management
       </div>
       <div class="border px-4 py-4 rounded shadow" id="login-card">
-        <form action="/login" method="POST">
+        <form action="/admin/login" method="POST">
           <div class="form-group">
             <label for="email1">Email Address</label>
             <input
