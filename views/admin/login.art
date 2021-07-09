@@ -25,30 +25,40 @@
   </head>
   <body>
     <div
-      class="d-flex flex-column justify-content-center align-items-center vh-100"
+      class="
+        d-flex
+        flex-column
+        justify-content-center
+        align-items-center
+        vh-100
+      "
       id="login-bgk"
     >
-      <div class="h1 display-4 pb-3 text-white"><small>Blog</small> Management</div>
+      <div class="h1 display-4 pb-3 text-white">
+        <small>Blog</small> Management
+      </div>
       <div class="border px-4 py-4 rounded shadow" id="login-card">
-        <form>
+        <form action="/login" method="POST">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="email1">Email Address</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="email1"
               aria-describedby="emailHelp"
+              name="email"
             />
             <small id="emailHelp" class="form-text text-muted"
               >We'll never share your email with anyone else.</small
             >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="password">Password</label>
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              id="password"
+              name="password"
             />
           </div>
           <div class="form-group form-check">
@@ -68,4 +78,23 @@
       </div>
     </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/common.js"></script>
+  <script>
+    // form event
+    $("form").on("submit", function () {
+      // get value of input
+      var res = serializeArrayToJSON($(this));
+
+      if (res.email.trim().length == 0) {
+        alert('please input email address')
+        return false;
+      }
+      if (res.password.trim().length == 0) {
+        alert('please input password')
+        return false;
+      }
+
+    });
+  </script>
 </html>

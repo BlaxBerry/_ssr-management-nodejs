@@ -5,11 +5,13 @@
 ```js
 |- model  // set database
     |-connect.js // connect to Mongodb
-    |- user.js
+    |- user.js // add user
 |- public  // static resource
     |- images
     |- upload
     |- css
+    |- js
+        |- common.js // handel login form
 |- route  // routes
     |- home.js  // 
     |- admin.js  // user management routes
