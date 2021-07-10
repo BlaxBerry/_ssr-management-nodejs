@@ -1,11 +1,13 @@
-const e = require('express')
 const express = require('express')
 
 const admin = express.Router()
 
+// 导入用户集合的规则
+const { User } = require('../model/user')
+
 
 // login
-admin.post('/login', (req, res) => {
+admin.post('/login', async (req, res) => {
     // get client form vale
     const { email, password } = req.body
 
@@ -17,8 +19,32 @@ admin.post('/login', (req, res) => {
         });
     }
 
+    // according to email to check unique user info
+    let user = await User.findOne({ email })
+    // if there is that unique one, user is  an obj,or a {}
+    if (user) {
+        if (password == user.password) {
+            res.send({
+                status: 200,
+                msg: 'login succeed'
+            })
+        } else {
+            // wrong password
+            res.status(400).render('admin/error', {
+                status: 400,
+                msg: 'Email Address or Password is WRONG,  will back to login page in 2s'
+            });
+        }
+    } else {
+        // no such email
+        res.status(400).render('admin/error', {
+            status: 400,
+            msg: 'Cannot find such user,  will back to login page in 2s'
+        });
+    }
+
 })
-// login page
+// show static login page
 admin.get('/login', (req, res) => {
     res.render('admin/login')
 })
