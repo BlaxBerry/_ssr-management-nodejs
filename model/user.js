@@ -30,16 +30,23 @@ const User = mongoose.model('User', mongoose.Schema({
 
 }))
 
-// to create the first User info(init user)
-// User.create({
-//     username: 'Andy',
-//     email: 'andy@qq.com',
-//     password: '123456',
-//     identity: 'admin',
-//     status: 0
-// })
-//     .then(() => { console.log('new user is created') })
-//     .catch(() => { console.log('falied to create a new user')})
+// // to create the first User info(init user)
+// async function createTextUser() {
+//     // bcrypt
+//     const bcrypt = require('bcrypt')
+//     const salt = await bcrypt.genSalt(10)
+//     const pass = await bcrypt.hash('123456', salt)
+//     User.create({
+//         username: 'Andy',
+//         email: 'andy@qq.com',
+//         password: pass,
+//         identity: 'admin',
+//         status: 0
+//     }).then(() => { console.log('new user is created') })
+//         .catch(() => { console.log('falied to create a new user') })
+
+// }
+// createTextUser()
 
 
 module.exports = {

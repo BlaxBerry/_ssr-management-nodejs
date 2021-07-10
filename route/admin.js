@@ -1,4 +1,6 @@
 const express = require('express')
+// bcrypt
+const bcrypt = require('bcrypt')
 
 const admin = express.Router()
 
@@ -23,7 +25,9 @@ admin.post('/login', async (req, res) => {
     let user = await User.findOne({ email })
     // if there is that unique one, user is  an obj,or a {}
     if (user) {
-        if (password == user.password) {
+        // bcrypt compare password
+        const isEqual = await bcrypt.compare(password, user.password)
+        if (isEqual) {
             res.send({
                 status: 200,
                 msg: 'login succeed'
