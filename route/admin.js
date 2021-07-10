@@ -30,10 +30,14 @@ admin.post('/login', async (req, res) => {
         if (isEqual) {
             // 储存登陆用户的信息到session中
             req.session.username = user.username
-            res.send({
-                status: 200,
-                msg: 'login succeed'
-            })
+            // res.send({
+            //     status: 200,
+            //     msg: 'login succeed'
+            // })
+            // route redirect to users list page
+            res.redirect('/admin/users');
+            // art-template 公用变量（用户名显示在右上角）
+            req.app.locals.userInfo = user;
         } else {
             // wrong password
             res.status(400).render('admin/error', {
