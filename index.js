@@ -2,8 +2,18 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 
+// create HTTP server
 const app = express()
+
+// session
+const session = require('express-session')
+
+// bodyParser 
 app.use(bodyParser.urlencoded({ extended: false }))
+
+// session
+app.use(session({secret:'secret key'}))
+
 
 // MongoDB
 require('./model/connect')

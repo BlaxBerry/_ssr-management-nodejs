@@ -28,6 +28,8 @@ admin.post('/login', async (req, res) => {
         // bcrypt compare password
         const isEqual = await bcrypt.compare(password, user.password)
         if (isEqual) {
+            // 储存登陆用户的信息到session中
+            req.session.username = user.username
             res.send({
                 status: 200,
                 msg: 'login succeed'
