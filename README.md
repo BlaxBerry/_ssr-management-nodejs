@@ -2,7 +2,9 @@
 
 **SSR**(Server Side Rendering) Blogs and Users' Infomation Management
 
-### Directory
+---
+
+### Directory Detail
 
 ```js
 |- model  // set database
@@ -10,14 +12,23 @@
     |- user.js // add user
 |- public  // static resource
     |- images
-    |- upload
     |- css
     |- js
         |- common.js // handel login form
 |- route  // routes
     |- home.js  //
-    |- admin.js  // user management routes
-|- views  // templates
+    |- admin.js  // manage routes /admin/???
+    |- admin
+        |- addArticlePageRender.js 
+        |- addUserPageRender.js 
+        |- editArticlePageRender.js  
+        |- editArticlePageRender.js 
+        |- articleListPageRender.js 
+        |- userListPageRender.js  // for Super User
+        |- loginPageRender.js
+        |- login.js        
+        |- logout.js
+|- views  // templates of art-template
     |- common
         |- header.art  // top nav
         |- aside.art   // left nav
@@ -32,6 +43,8 @@
         |- edit-article.art  //edit
         |- error.art // login error page
 |- index.js  // mian JS file
+|- package.json
+|- package-lock.json
 ```
 
 ---
@@ -52,7 +65,7 @@
 
 ---
 
-## Start
+## Start Project
 ```bash
 npm install 
 

@@ -1,100 +1,42 @@
 const express = require('express')
-// bcrypt
-const bcrypt = require('bcrypt')
-
 const admin = express.Router()
-
 // 导入用户集合的规则
 const { User } = require('../model/user')
 
 
-// login
-admin.post('/login', async (req, res) => {
-    // get client form vale
-    const { email, password } = req.body
+// login 
+admin.post('/login', require('./admin/login'))
 
-    // server side form value validation
-    if (email.trim().length == 0 || password.trim().length == 0) {
-        return res.status(400).render('admin/error', {
-            status: 400,
-            msg: 'Email Address or Password is WRONG,  will back to login page in 2s'
-        });
-    }
+// logout
+admin.get('/logout', require('./admin/logout'))
 
-    // according to email to check unique user info
-    let user = await User.findOne({ email })
-    // if there is that unique one, user is  an obj,or a {}
-    if (user) {
-        // bcrypt compare password
-        const isEqual = await bcrypt.compare(password, user.password)
-        if (isEqual) {
-            // 储存登陆用户的信息到session中
-            req.session.username = user.username
-            // res.send({
-            //     status: 200,
-            //     msg: 'login succeed'
-            // })
-            // route redirect to users list page
-            res.redirect('/admin/users');
-            // art-template 公用变量（用户名显示在右上角）
-            req.app.locals.userInfo = user;
-        } else {
-            // wrong password
-            res.status(400).render('admin/error', {
-                status: 400,
-                msg: 'Email Address or Password is WRONG,  will back to login page in 2s'
-            });
-        }
-    } else {
-        // no such email
-        res.status(400).render('admin/error', {
-            status: 400,
-            msg: 'Cannot find such user,  will back to login page in 2s'
-        });
-    }
-
-})
-// show static login page
-admin.get('/login', (req, res) => {
-    res.render('admin/login')
-})
+// render login page
+admin.get('/login', require('./admin/loginPageRender'))
 
 
 
-// user list
-admin.get('/users', (req, res) => {
-    res.render('admin/users')
-})
+// render user list page
+admin.get('/users', require('./admin/userPageRender'))
 
-// article list
-admin.get('/articles', (req, res) => {
-    res.render('admin/articles')
-})
+// render articles list
+admin.get('/articles', require('./admin/articleListPageRender'))
 
 
 
+// render add user page
+admin.get('/add/user', require('./admin/addUserPageRender'))
 
-// add user
-admin.get('/add/user', (req, res) => {
-    res.render('admin/add-user')
-})
-
-// add article
-admin.get('/add/article', (req, res) => {
-    res.render('admin/add-article')
-})
+// render add article page
+admin.get('/add/article', require('./admin/addArticlePageRender'))
 
 
 
+// render edit user page
+admin.get('/edit/user', require('./admin/editUserPageRender'))
 
-// edit user
-admin.get('/edit/user', (req, res) => {
-    res.render('admin/edit-user')
-})
+// render edit article page
+admin.get('/edit/article', require('./admin/editArticlePageRender'))
 
-// edit article
-admin.get('/edit/article', (req, res) => {
-    res.render('admin/edit-article')
-})
+
 
 module.exports = admin
