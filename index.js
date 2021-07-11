@@ -22,15 +22,8 @@ app.use(session({ secret: 'secret key' }))
 // static 
 app.use(express.static(path.join(__dirname, 'public')))
 
-// 登陆拦截
-app.use('/admin', (req, res, next) => {
-    // 判断地址是否是login页面 && session对象中是否存有自定义属性（即是否登陆）
-    if (req.url != '/login' && !req.session.username) {
-        res.redirect('/admin/login')
-    } else {
-        next();
-    }
-})
+// login interception
+app.use('/admin', require('./middleware/loginGuard'))
 
 // Router
 app.use('/home', home)
