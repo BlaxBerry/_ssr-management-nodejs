@@ -16,6 +16,7 @@
         >Add New User</a
       >
     </div>
+    
     <!-- table -->
     <table class="table table-bordered table-striped table-hover text-center">
       <thead>
@@ -44,22 +45,29 @@
         {{/each}}
       </tbody>
     </table>
+
     <!-- pages -->
     <nav aria-label="Page navigation example">
       <ul class="pagination">
+        {{if (page > 1)}}
         <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
+          <a class="page-link" href="/admin/users?page=<%= page-1 %>" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        {{/if}}
+        
+        <% for(var i = 1; i <= total; i++) { %>
+          <li class="page-item"><a class="page-link" href="/admin/users?page=<%= i %>">{{i}}</a></li>
+        <% } %>
+
+        {{if (page-0+1 <= total)}}
         <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
+          <a class="page-link" href="/admin/users?page=<%= page-0+1 %>" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
+        {{/if}}
       </ul>
     </nav>
   </div>
