@@ -22,10 +22,11 @@ const User = mongoose.model('User', mongoose.Schema({
     identity: {
         type: String,
         required: true,
+        // normal: normal user; admin: super user
     },
     status: {
         type: Number,
-        default: 0  // 1:forbidden 0: can be used
+        default: 0  // 1:forbidden 0: allowed
     }
 
 }))

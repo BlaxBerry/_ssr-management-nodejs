@@ -10,7 +10,7 @@
         <!-- title -->
         <div class="d-flex justify-content-between mb-3">
           <h3>Users List <span class="badge badge-secondary">Find 3 Users</span></h3>
-          <a class="btn btn-primary" href="#" role="button">Add New User</a>
+          <a class="btn btn-primary" href="/admin/add/user" role="button">Add New User</a>
         </div>
         <!-- table -->
         <table

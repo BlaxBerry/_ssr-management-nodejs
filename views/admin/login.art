@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico">
     <title>login</title>
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <style>
@@ -66,13 +67,15 @@
               type="checkbox"
               class="form-check-input"
               id="exampleCheck1"
+              required
+              checked
             />
             <label class="form-check-label" for="exampleCheck1"
               >Check me out</label
             >
           </div>
           <button type="submit" class="btn btn-block btn-primary">
-            Submit
+            Login
           </button>
         </form>
       </div>

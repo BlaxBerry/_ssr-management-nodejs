@@ -9,45 +9,52 @@
         <!-- title -->
         <div class="mb-3">
           <h3>
-            Edit User <span class="badge badge-secondary">New</span>
+            User Information <span class="badge badge-secondary">Edit</span>
           </h3>
-          <div class="alert alert-warning" role="alert">
-            A simple warning alert—check it out!
+          <div class="alert-warning px-3" role="alert">
+            {{msg}}
           </div>
         </div>
         <!-- form -->
-        <form class="mx-auto border px-4 py-4">
+        <!-- form -->
+        <form class="mx-auto border px-4 py-4" action="/admin/add/user" method="POST">
             <div class="form-group">
-                <label for="exampleInputEmail1">Name</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="username">Name</label>
+                <input type="text" required class="form-control" id="username" name="username">
             </div>
 
               <div class="form-group">
-                <label for="exampleInputEmail1">Email Address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="email">Email Address</label>
+                <input type="email" required class="form-control" id="email" aria-describedby="emailHelp" name="email">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="password">Password</label>
+                <input type="password" required class="form-control" id="password" name="password">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Identity</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="identity">Identity</label>
+              <select class="form-control form-control-sm" id="identity" name="identity">
+                <option value="Normal">Normal</option>
+                <option value="Admin">Admin</option>
+              </select>
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Status</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="status">Status</label>
+              <select class="form-control form-control-sm" id="status" name="status">
+                <option value="0">Allowed</option>
+                <option value="1">Forbidden</option>
+              </select>
             </div>
 
               <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" required checked>
+                <label class="form-check-label"for="exampleCheck1">Allow to edit</label>
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Edit User</button>
             </form>
         </form>
       </div>

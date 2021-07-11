@@ -23,6 +23,9 @@ admin.get('/articles', require('./admin/articleListPageRender'))
 
 
 
+// add user
+admin.post('/add/user', require('./admin/addUser'))
+
 // render add user page
 admin.get('/add/user', require('./admin/addUserPageRender'))
 
