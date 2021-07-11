@@ -1,5 +1,8 @@
 // mongoose
 const mongoose = require('mongoose')
+// Joi
+const Joi = require('joi')
+
 
 // 用户集合规则
 const User = mongoose.model('User', mongoose.Schema({
@@ -31,6 +34,38 @@ const User = mongoose.model('User', mongoose.Schema({
 
 }))
 
+// 验证用户信息
+// user info validattion
+const validateUser = (userData) => {
+    // Joi validation rules
+    const schema = {
+        username: Joi.string()
+            .min(2).max(25)
+            .required()
+            .error(new Error('userName does not conform to the format specification')),
+        email: Joi.string()
+            .email()
+            .required()
+            .error(new Error('Email does not conform to the format specification')),
+        password: Joi.string()
+            .regex(/^[0-9a-zA-Z]{3,30}$/)
+            .required()
+            .error(new Error('Password does not conform to the format specification')),
+        identity: Joi.string()
+            .valid('Normal', 'Admin')
+            .required()
+            .error(new Error('Identity does not conform to the format specification')),
+        status: Joi.number()
+            .valid(0, 1)
+            .required()
+            .error(new Error('Status does not conform to the format specification'))
+    };
+
+    // to validate
+    return Joi.validate(userData, schema)
+}
+
+
 // // to create the first User info(init user)
 // async function createTextUser() {
 //     // bcrypt
@@ -51,5 +86,6 @@ const User = mongoose.model('User', mongoose.Schema({
 
 
 module.exports = {
-    User
+    User,
+    validateUser
 }
