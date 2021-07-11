@@ -27,6 +27,7 @@
         |- userListPageRender.js  // for Super User
         |- loginPageRender.js
         |- addUser.js
+        |- editUser.js
         |- login.js        
         |- logout.js
 |- views  // templates of art-template

@@ -16,7 +16,7 @@
         >Add New User</a
       >
     </div>
-    
+
     <!-- table -->
     <table class="table table-bordered table-striped table-hover text-center">
       <thead>
@@ -38,8 +38,8 @@
           <td>{{ $value.identity }}</td>
           <td>{{ $value.status == 0 ? "Allowed" : "Forbidden" }}</td>
           <td>
-            <button type="button" class="btn btn-success btn-sm">Edit</button>
-            <button type="button" class="btn btn-danger btn-sm">X</button>
+            <a href="/admin/edit/user?id={{$value._id.toString()}}" type="button" class="btn btn-success btn-sm">Edit</a>
+            <a href="#" type="button" class="btn btn-danger btn-sm">X</a>
           </td>
         </tr>
         {{/each}}

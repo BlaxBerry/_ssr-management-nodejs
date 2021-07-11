@@ -10,7 +10,7 @@
         <!-- title -->
         <div class="mb-3">
           <h3>
-            User Information <span class="badge badge-secondary">Add</span>
+           <span class="badge badge-secondary">Add User</span>
           </h3>
           <div class="alert-warning px-3" role="alert">
             {{msg}}

@@ -33,6 +33,8 @@ admin.get('/add/user', require('./admin/addUserPageRender'))
 admin.get('/add/article', require('./admin/addArticlePageRender'))
 
 
+// edit user
+admin.post('/edit/user', require('./admin/editUser'))
 
 // render edit user page
 admin.get('/edit/user', require('./admin/editUserPageRender'))
