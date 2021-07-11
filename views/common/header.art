@@ -3,5 +3,5 @@
   style="height: 70px; line-height: 70px"
 >
   <div class="col-sm-3 text-center text-white bg-primary">Management</div>
-  <div class="col-sm-9 text-right pr-4">{{userInfo.email}}</div>
+  <div class="col-sm-9 text-right pr-4">{{userInfo && userInfo.email}}</div>
 </div>
