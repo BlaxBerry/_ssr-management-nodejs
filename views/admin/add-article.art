@@ -37,7 +37,7 @@
                 <label for="cover">Cover</label>
                 <input type="file" class="form-control-file" id="cover" name="cover" required multiple>
                 <div style="margin-top: 5px;">
-                  <img src="" alt="" style="width: 100px;" id="previewImg" >
+                  <img src="" alt="" style="width: 200px;" id="previewImg" >
                 </div>
             </div>
 
