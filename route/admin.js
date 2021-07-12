@@ -44,4 +44,7 @@ admin.get('/edit/article', require('./admin/editArticlePageRender'))
 
 
 
+// remove user
+admin.get('/remove', require('./admin/removeUser'))
+
 module.exports = admin

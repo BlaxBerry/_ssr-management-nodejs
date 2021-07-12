@@ -1,6 +1,20 @@
 ## Blog and Users Management
 
-**SSR**(Server Side Rendering) Blogs and Users' Infomation Management
+a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Management system according to Express.js + MongoDB + TemplateEngine.
+
+---
+
+### Function
+- **Users' Info**
+    - users' list
+    - add new user
+    - modify user's data
+    - remove user
+- **Users' Articles**
+    - articles list
+    - add new article
+    - modify article
+    - remove article
 
 ---
 
@@ -28,6 +42,7 @@
         |- loginPageRender.js
         |- addUser.js
         |- editUser.js
+        |- removeUser.js
         |- login.js        
         |- logout.js
 |- views  // templates of art-template
@@ -129,13 +144,9 @@ localhost/admin/users
 
 ---
 
-localhost/admin/articles
+localhost/admin/add/user
 ![](./public/images/03.png)
 
----
-
-localhost/admin/add/user
-![](./public/images/04.png)
 ```js
 // Joi
 const Joi = require('joi')
@@ -174,7 +185,18 @@ module.exports = async (req, res) => {
     }
 }
 ```
+
 ---
 
-localhost/admin/edit/user
+localhost/admin/eddit/user
+![](./public/images/04.png)
+
+---
+
+localhost/admin/remove
+![](./public/images/05.png)
+
+---
+
+localhost/admin/articles
 ![](./public/images/06.png)

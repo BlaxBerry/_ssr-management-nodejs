@@ -39,7 +39,7 @@
           <td>{{ $value.status == 0 ? "Allowed" : "Forbidden" }}</td>
           <td>
             <a href="/admin/edit/user?id={{$value._id.toString()}}" type="button" class="btn btn-success btn-sm">Edit</a>
-            <a href="#" type="button" class="btn btn-danger btn-sm">X</a>
+            <a href="#" type="button" class="btn btn-danger btn-sm" data-userid="{{$value._id.toString()}}">X</a>
           </td>
         </tr>
         {{/each}}
@@ -70,6 +70,51 @@
         {{/if}}
       </ul>
     </nav>
+
+    <!-- mask Modal -->
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Please Confirm</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure to Remove this user ?</p>
+            <strong class="user-info">{{}}</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="#" type="button" class="btn btn-danger">Remove</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+{{/block}}
+
+{{block 'script'}}
+<script>
+  $('table .btn-danger').on('click',function(){
+    // show modal
+    $('.modal').show();
+    // get user id from attr
+    var userID = $(this).attr('data-userid');
+    // render the modal 
+    $('.modal .modal-body strong.user-info').html(userID)
+    // send GET request with user id params
+    $('.modal .modal-footer .btn-danger').prop('href',`/admin/remove?id=${userID}`)
+  });
+  
+  // hide modal
+  $('.modal .modal-footer .btn-secondary').on('click',()=>{
+    $('.modal').hide()
+  });
+  $('.modal .close').on('click',()=>{
+    $('.modal').hide()
+  });
+</script>
 {{/block}}
