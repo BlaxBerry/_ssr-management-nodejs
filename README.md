@@ -26,6 +26,7 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
     |- user.js // add user
 |- public  // static resource
     |- images
+    |- uplaods
     |- css
     |- js
         |- common.js // handel login form
@@ -78,6 +79,8 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
 
 - MongeDB
 
+- mongoose
+
 - art-template(express-art-template)
 
 - bcrypt
@@ -89,6 +92,8 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
 - body-parser
 
 - formidable
+
+- dateformat
 
 ---
 

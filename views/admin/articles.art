@@ -13,6 +13,7 @@
           </h3>
           <a href="/admin/add/article"  class="btn btn-primary" role="button">Add New Article</a>
         </div>
+
         <!-- table -->
         <table
           class="table table-bordered table-striped table-hover text-center"
@@ -27,38 +28,21 @@
             </tr>
           </thead>
           <tbody>
+            {{each articles}}
             <tr>
-              <th scope="row">001</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td scope="row">{{$value._id.toString()}}</td>
+              <td class="text-left">{{$value.title}}</td>
+              <td>{{dateformat($value.publishDate, 'yyyy-mm-dd')}}</td>
+              <td>{{$value.author.username}}</td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm">O</button>
+                <button type="button" class="btn btn-primary btn-sm">Edit</button>
                 <button type="button" class="btn btn-danger btn-sm">X</button>
               </td>
             </tr>
-            <tr>
-              <th scope="row">001</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>
-                <button type="button" class="btn btn-primary btn-sm">O</button>
-                <button type="button" class="btn btn-danger btn-sm">X</button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">001</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>
-                <button type="button" class="btn btn-primary btn-sm">O</button>
-                <button type="button" class="btn btn-danger btn-sm">X</button>
-              </td>
-            </tr>
+            {{/each}}
           </tbody>
         </table>
+        
         <!-- pages -->
         <nav aria-label="Page navigation example">
           <ul class="pagination">
