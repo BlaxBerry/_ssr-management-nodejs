@@ -48,6 +48,7 @@
               id="email1"
               aria-describedby="emailHelp"
               name="email"
+              value="andy@qq.com"
             />
             <small id="emailHelp" class="form-text text-muted"
               >We'll never share your email with anyone else.</small
@@ -60,6 +61,7 @@
               class="form-control"
               id="password"
               name="password"
+              value="123456"
             />
           </div>
           <div class="form-group form-check">

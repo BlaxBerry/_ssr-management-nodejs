@@ -83,6 +83,8 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
 
 - Joi
 
+- formidable
+
 ---
 
 ## Start Project

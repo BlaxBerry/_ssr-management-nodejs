@@ -36,6 +36,8 @@ admin.get('/remove', require('./admin/removeUser'))
 // render articles list
 admin.get('/articles', require('./admin/articleListPageRender'))
 
+// add article
+admin.post('/add/article', require('./admin/addArticle'))
 
 // render add article page
 admin.get('/add/article', require('./admin/addArticlePageRender'))

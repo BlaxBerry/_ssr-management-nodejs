@@ -11,7 +11,7 @@
           <h3>
             Articles List <span class="badge badge-secondary">New</span>
           </h3>
-          <a class="btn btn-primary" href="#" role="button">Add New Article</a>
+          <a href="/admin/add/article"  class="btn btn-primary" role="button">Add New Article</a>
         </div>
         <!-- table -->
         <table
