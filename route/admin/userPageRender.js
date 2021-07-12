@@ -3,6 +3,9 @@ const { User } = require('../../model/user')
 
 // render user list page  /admin/users
 module.exports = async (req, res) => {
+    // 添加标识，当前是users页面
+    req.app.locals.nowPage = 'users'
+
     // 客户端传来的请求页数,若没传默认是1
     let page = req.query.page || 1;
     // 每一页显示的数据数

@@ -3,6 +3,9 @@ const { User } = require('../../model/user')
 
 // render edit user page  /admin/add/user
 module.exports = async (req, res) => {
+    // 添加标识，当前是users页面
+    req.app.locals.nowPage = 'users'
+
     // 接受查询用户的id参数
     const { id } = req.query;
     // 通过判断是否存在路由参数id

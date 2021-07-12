@@ -1,6 +1,16 @@
 <div class="col-sm-3 text-center text-white bg-dark pt-5 px-0">
   <nav class="nav flex-column">
-    <a href="#" class="nav-link my-3 text-white">Manage Users</a>
-    <a href="#" class="nav-link my-3 text-white">Manage Articles</a>
+    <a
+      href="/admin/users"
+      class="nav-link my-3 text-white 
+          {{ nowPage == 'users' ? 'bg-primary' : '' }}"
+      >Users List</a
+    >
+    <a
+      href="/admin/articles"
+      class="nav-link my-3 text-white 
+          {{ nowPage == 'articles' ? 'bg-primary' : '' }}"
+      >Articles List</a
+    >
   </nav>
 </div>
