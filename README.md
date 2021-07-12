@@ -29,6 +29,7 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
     |- css
     |- js
         |- common.js // handel login form
+        |- ckeditor.js 
 |- route  // routes
     |- home.js  //
     |- admin.js  // manage routes /admin/???
@@ -84,6 +85,8 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
 - session(express-session)
 
 - Joi
+
+- body-parser
 
 - formidable
 
