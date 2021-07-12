@@ -69,6 +69,8 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
 ### Tech Stack
 - Bootstap v4
 
+- CKEditor
+
 - Node.js
 
 - Express.js
@@ -202,3 +204,8 @@ localhost/admin/remove
 
 localhost/admin/articles
 ![](./public/images/06.png)
+
+---
+
+localhost/admin/add/article
+![](./public/images/07.png)
