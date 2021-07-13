@@ -47,12 +47,15 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
         |- removeUser.js
         |- login.js        
         |- logout.js
+    |- home
+        |- home.js
+        |- articleDetail.js
 |- views  // templates of art-template
-    |- common
-        |- header.art  // top nav
-        |- aside.art   // left nav
-        |- layout/art  // HTML bone
     |- admin
+        |- common
+            |- header.art  // top nav
+            |- aside.art   // left nav
+            |- layout/art  // HTML bone
         |- login.art
         |- users.art  // users list page
         |- articles.art  // articles  page
@@ -61,6 +64,12 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
         |- edit-user.art  // edit
         |- edit-article.art  //edit
         |- error.art // login error page
+    |- home
+        |- common
+            |- header.art  // top nav
+            |- layout/art  // HTML bone    
+        |- index.art // home
+        |- article.art // article's detail
 |- index.js  // mian JS file
 |- package.json
 |- package-lock.json
@@ -217,3 +226,8 @@ localhost/admin/articles
 
 localhost/admin/add/article
 ![](./public/images/07.png)
+
+---
+
+localhost/home/
+![](./public/images/10.png)

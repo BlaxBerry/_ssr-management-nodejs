@@ -1,0 +1,12 @@
+<div
+  class="bg-dark mw-100 w-100 m-0 border-bottom fixed-top"
+  style="height: 70px; line-height: 70px; overflow: hidden;"
+>
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="text-center text-white px-5 h-100">Blogs</div>
+    <div class="text-right">
+      <a href="/home/" class="d-inline-block px-3 h-100 text-white bg-primary ">Home</a>
+      <a href="/admin/login" class="d-inline-block px-3 h-100 text-white">Login</a>
+    </div>
+  </div>
+</div>
