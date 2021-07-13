@@ -7,45 +7,27 @@
 <div class="container">
   <!-- list -->
   <div class="list py-2 d-flex justify-content-between flex-wrap">
+    {{each articles}}
     <div class="card mb-3" style="width: 49%">
-      <img src="/uploads/01.jpg" class="card-img-top w-100" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
+      <a href="/home/article?id={{ $value._id.toString() }}">
+        <img src="{{ $value.cover }}" class="card-img-top w-100" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title mb-2">{{ $value.title }}</h5>
+          <small>
+            <span class="author text-warning">
+              {{$value.author.username}}
+            </span> |
+            <span class="publishDate text-muted">
+              {{dateformat($value.publishDate, "yyyy-mm-dd")}}
+            </span>
+          </small>
+          <div class="card-text py-2 content">
+            {{@$value.content.replace(/<[^>]+>/g,'').substr(0,200)+'...'}}
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="card mb-3" style="width: 49%">
-      <img src="/uploads/03.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
-    </div>
-    <div class="card mb-3" style="width: 49%">
-      <img src="/uploads/04.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
-    </div>
+    {{/each}}
   </div>
 
   <!-- pages -->

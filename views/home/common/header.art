@@ -1,5 +1,5 @@
 <div
-  class="bg-dark mw-100 w-100 m-0 border-bottom fixed-top"
+  class="bg-dark mw-100 w-100 m-0 border-bottom fixed-top header"
   style="height: 70px; line-height: 70px; overflow: hidden;"
 >
   <div class="container d-flex justify-content-between align-items-center">
