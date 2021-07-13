@@ -7,7 +7,7 @@ const Article = mongoose.model('Article', mongoose.Schema({
         type: String,
         required: true,
         minLength: 4,
-        maxlength: 25
+        maxlength: 50
     },
     // 关联集合
     author: {

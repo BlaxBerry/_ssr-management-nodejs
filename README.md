@@ -1,32 +1,77 @@
-## Blog and Users Management
+## Blogs and Users Management
+a full stack project.
 
-a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Management system according to Express.js + MongoDB + TemplateEngine.
+Blogs and Users' Infomation Management system, according to Express.js + MongoDB + TemplateEngine. Server Side Rendering **(SSR)** 
 
----
+could check and uploade blog articles,
+login as admin to manage users and articles
 
-### Function
-- **Users' Info**
-    - users' list
-    - add new user
-    - modify user's data
-    - remove user
-- **Users' Articles**
-    - articles list
-    - add new article
-    - modify article
-    - remove article
+**Start Project**
+```bash
+npm install 
+
+nodemon index.js
+```
+**SSR Server running at localhost:80**
 
 ---
 
-### Directory Detail
+### 1. Function
+- **Client**
+    - check blogs
+    - check artic details
+    - uploade blog article
+    - login
+    - logout
+    - check static resources on server
+- **Server**
+    - http server created by Express.js
+    - connect to database, add/edit/remove data
+    - SSR, Server Side Rendering by TemplateEngine
+    - route guard login interception
+    - use session + cookie to record login
+    - use Joi to validate form data from client side
+    - use formidable to analyze files uploaded from client side
+    - use bcrypt password-hashing encryption
+ 
+
+---
+### 2.Tech Stack
+
+- **front end**: 
+    - HTML5 + CSS3
+    - Bootstrap 4
+    - jQuery
+    - CKEditor
+- **server side**: 
+    - Node.js
+    - **Express.js** 
+    - art-template
+    - express-art-template
+    - mongoose
+    - bcrypt
+    - session(express-session)
+    - Joi
+    - body-parser
+    - formidable
+    - dateformat
+- **database**: 
+    - **MongoDB**
+    - MongoDB Compass
+
+---
+
+### 3. Directory Detail
 
 ```js
+|- middleware
+    |- loginGuard.js // login interception
 |- model  // set database
     |-connect.js // connect to Mongodb
     |- user.js // add user
 |- public  // static resource
     |- images
-    |- uplaods
+    |- uplaods // blog articles' cover img
     |- css
     |- js
         |- common.js // handel login form
@@ -77,46 +122,24 @@ a Server Side Rendering **(SSR)** Project, about Blogs and Users' Infomation Man
 
 ---
 
-### Tech Stack
-- Bootstap v4
+## 4. Routes
+- `/home/`: home page, bolg articles list
 
-- CKEditor
+- `/admin/login `: user login to manage 
+- `/admin/logout `: user logout
 
-- Node.js
+- `/admin/users`: users' list
+- `/admin/add/user `: add new user
+- `/admin/edit/user `: modify user's data
 
-- Express.js
-
-- MongeDB
-
-- mongoose
-
-- art-template(express-art-template)
-
-- bcrypt
-
-- session(express-session)
-
-- Joi
-
-- body-parser
-
-- formidable
-
-- dateformat
+- `/admin/remove/user`: remove user
+- `/admin/articles`: articles list
+- `/admin/add/articles`: add new article
+- `/admin/edit/articles `: modify article
+- `/admin/remove/articles `: remove article
 
 ---
-
-## Start Project
-```bash
-npm install 
-
-nodemon index.js
-```
-
-**SSR Server running at localhost:80**
-
-
-localhost/admin/login
+/admin/login
 ![](./public/images/01.png)
 **Super User**: 
 - email: andy@qq.com 
@@ -160,12 +183,12 @@ createTextUser();
 
 ---
 
-localhost/admin/users
+/admin/users
 ![](./public/images/02.png)
 
 ---
 
-localhost/admin/add/user
+/admin/add/user
 ![](./public/images/03.png)
 
 ```js
@@ -209,25 +232,25 @@ module.exports = async (req, res) => {
 
 ---
 
-localhost/admin/eddit/user
+/admin/eddit/user
 ![](./public/images/04.png)
 
 ---
 
-localhost/admin/remove
+/admin/remove
 ![](./public/images/05.png)
 
 ---
 
-localhost/admin/articles
+/admin/articles
 ![](./public/images/06.png)
 
 ---
 
-localhost/admin/add/article
+/admin/add/article
 ![](./public/images/07.png)
 
 ---
 
-localhost/home/
+/home/
 ![](./public/images/10.png)
