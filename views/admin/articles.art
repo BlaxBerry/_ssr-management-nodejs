@@ -2,7 +2,7 @@
 
   {{block 'main'}}
     
-    {include './common/header.art'}}
+    {{include './common/header.art'}}
 
     <div class="row bg-light mw-100 w-100 m-0" style="height: 100%">
      {{include './common/aside.art'}}
