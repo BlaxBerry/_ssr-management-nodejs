@@ -12,5 +12,10 @@
           {{ nowPage == 'articles' ? 'bg-primary' : '' }}"
       >Articles List</a
     >
+    <a
+      href="/admin/logout"
+      class="nav-link my-3 "
+      >Logout</a
+    >
   </nav>
 </div>
