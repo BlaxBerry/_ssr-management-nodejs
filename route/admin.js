@@ -46,5 +46,7 @@ admin.get('/add/article', require('./admin/addArticlePageRender'))
 // render edit article page
 admin.get('/edit/article', require('./admin/editArticlePageRender'))
 
+// edit article
+admin.post('/edit/article', require('./admin/editArticle'))
 
 module.exports = admin

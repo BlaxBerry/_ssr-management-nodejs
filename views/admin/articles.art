@@ -36,8 +36,8 @@
               <td>{{dateformat($value.publishDate, 'yyyy-mm-dd')}}</td>
               <td>{{$value.author.username}}</td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm">X</button>
+                <a href="/admin/edit/article?id={{$value._id.toString()}}" type="button" class="btn btn-success btn-sm">Edit</a>
+                <a href="#" type="button" class="btn btn-danger btn-sm" data-userid="{{$value._id.toString()}}">X</a>
               </td>
             </tr>
             {{/each}}

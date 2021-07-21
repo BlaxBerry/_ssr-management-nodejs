@@ -9,35 +9,49 @@
         <!-- title -->
         <div class="mb-3">
           <h3>
-            Edit Article <span class="badge badge-secondary">New</span>
+            Edit Article <span class="badge badge-secondary">ID: {{article._id.toString()}}</span>
           </h3>
-          <div class="alert alert-warning" role="alert">
-            A simple warning alert—check it out!
+          <div class="alert-warning px-3" role="alert">
+            {{msg}}
           </div>
         </div>
         <!-- form -->
-        <form class="mx-auto border px-4 py-4">
+        <form class="mx-auto border px-4 py-4" action="/admin/edit/article?id={{article._id.toString()}}" method="POST">
             <div class="form-group">
-                <label for="exampleInputEmail1">Article Title</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Article Content</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" required name="title" value="{{article.title}}">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Article Content</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" id="author" name="author" readonly value="{{article.author.username}}">
+            </div>
+
+            <div class="form-group">
+                <label for="publishDate">Pubilsh Date</label>
+                <!-- <input type="date" class="form-control" id="publishDate" name="publishDate" value="{{article.publishDate}}" readonly> -->
+                <input type="text" class="form-control" id="publishDate" name="publishDate" value="{{dateformat(article.publishDate, 'yyyy/mm/dd')}}" readonly>
+              </div>
+
+            <!-- <div class="form-group">
+                <label for="cover">Cover</label>
+                <input type="file" class="form-control-file" id="cover" name="cover" required multiple>
+                <div style="margin-top: 5px;">
+                  <img src="" alt="" style="width: 200px;" id="previewImg" >
+                </div>
+            </div> -->
+
+            <div class="form-group">
+              <label for="editor">Content</label>
+              <textarea class="form-control" id="editor" rows="5" name="content">{{article.content}}</textarea>
             </div>
 
               <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+                <label class="form-check-label" for="exampleCheck1">Allow to add new article</label>
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Add Article</button>
             </form>
         </form>
       </div>
