@@ -39,6 +39,9 @@ app.use('/admin', require('./middleware/loginGuard'))
 // Router
 app.use('/home', home)
 app.use('/admin', admin)
+app.get('/', (req, res) => {
+    res.redirect('/home/')
+})
 
 // art-template
 artTemplate.defaults.imports.dateformat = dateformat;
